@@ -1,0 +1,12 @@
+Allocator Domains
+All allocating functions belong to one of three different “domains”.
+These domains represent different allocation strategies and are optimized for different purposes. 
+The specific details on how every domain allocates memory or what internal functions each domain calls is considered
+an implementation detail, but for debugging purposes a simplified table can be found at here.
+There is no hard requirement to use the memory returned by the allocation functions belonging to a given domain for only the purposes hinted by
+that domain (although this is the recommended practice).
+ For example, one could use the memory returned by PyMem_RawMalloc() for allocating Python objects or the memory returned by 
+ PyObject_Malloc() for allocating memory for buffers.
+pointers in c
+A pointer is a variable that stores the memory address of another variable as its value.
+A pointer variable points to a data type (like int) of the same type, and is created with the * operator.
